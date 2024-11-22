@@ -1,0 +1,213 @@
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #19b8b8;
+    color: #f7f6f9;
+}
+nav div h1 {
+    text-decoration: overline underline  rgb(247, 244, 244);
+    font-size: 600%;
+    
+}
+header {
+    background-image: url('img/khalifa.jpg'); /* Default background */
+    background-size: cover; /* Ensure the image covers the entire header */
+    background-position: center; /* Center the background image */
+    height: 300px; /* Adjust the height for your needs */
+    color: white; /* Text color for contrast */
+    display: flex; /* Align content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+    }
+
+    /* Mobile-specific styles */
+@media (max-width: 768px) {
+    header {
+            background-image: url('img/khalifa.jpg'); /* Background for mobile devices */
+            height: 200px; /* Adjust height for smaller screens */
+        }
+    
+    body{
+        background-color: #333;
+
+    }
+}
+
+    /* Tablet-specific styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+            background-image: url('img/khalifa.jpg'); /* Background for tablets */
+            height: 250px; /* Adjust height for tablets */
+        }
+    }
+
+nav .logo h1 {
+    color: #fcfbfb;
+    text-align: center;
+}
+.hero-content #food1{
+    height: 300%;
+    width: 300%;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #faf9f9;
+    text-decoration: underline;
+    font-size: 16px;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.hero {
+    background-image: url('https://example.com/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    background-color: #e67e22;
+    color: white;
+    padding: 10px 30px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero .btn:hover {
+    background-color: #d35400;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+.offer-items {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.offer-item #lamb {
+    background-image: url('img/grilledlamb.jpg');
+}
+.offer-item #shawarma {
+    background-image: url('img/chickenshawarma.jpg');
+}
+.offer-item #veg {
+    background-image: url('img/vegtplat.jpg');
+}
+.offer-item {
+    
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.offer-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: red;
+    font-style: bold;
+}
+
+
+.offer-item p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #faf9f9;
+}
+
+.offer-item span {
+    font-size: 20px;
+    color: #e67e22;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.contact .btn {
+    background-color: #e67e22;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact .btn:hover {
+    background-color: #d35400;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+section div .offer-item #1{
+    background-image: url('img/grilledlamb.jpg');
+}
+
+</style>

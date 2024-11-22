@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        /* Slider container styling */
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Adjust for your desired slider width */
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Slide images */
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 80%; /* Width = 100% * number of slides */
+        }
+
+        .slides img {
+            width: 100%;
+            flex-shrink: 0%;
+           
+        }
+
+        /* Navigation buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Dots for navigation */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dots span {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .dots .active {
+            background-color: #717171;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img src="img/menu1.jpg" alt="Image 1">
+            <img src="img/menu2.jpg" alt="Image 2">
+            <img src="img/menu3.jpg" alt="Image 3">
+            <img src="img/menu4.jpg" alt="Image 4">
+            <img src="img/menu5.jpg" alt="Image 5">
+            <img src="img/menu6.jpg" alt="Image 6">
+            <img src="img/menu7.jpg" alt="Image 7">
+            <img src="img/menu8.jpg" alt="Image 8">
+            <img src="img/menu9.jpg" alt="Image 9">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+    <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const dots = document.querySelectorAll('.dot');
+
+        let currentIndex = 0;
+        const totalSlides = images.length;
+
+        function updateSlider(index) {
+            slides.style.transform = `translateX(${-index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider(currentIndex);
+        }
+
+        function showPrevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider(currentIndex);
+        }
+
+        // Event listeners for buttons
+        nextButton.addEventListener('click', showNextSlide);
+        prevButton.addEventListener('click', showPrevSlide);
+
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider(currentIndex);
+            });
+        });
+
+        // Auto-slide functionality
+        //setInterval(showNextSlide, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
